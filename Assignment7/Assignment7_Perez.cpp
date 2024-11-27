@@ -5,7 +5,7 @@
 
 using namespace std;
 
-void sortNames(string names[], int size);  //These functions encapsulate most restrictions given to us.
+void sortNames(string names[], int size);
 bool searchName(const string names[], int size, const string& target);
 string findLongestName(const string names[], int size);
 int countVowels(const string names[], int size);
@@ -26,7 +26,6 @@ int main(){
     }
     
     sortNames(namesList,count);
-    
     cout << "Sorted List of Names:" << endl;
     for(i=0;i<count;i++)
     cout << namesList[i] << endl;
@@ -54,11 +53,11 @@ void sortNames(string names[], int size){
         for(checked=(i+1);checked<size;checked++){
             if(names[checked]<names[alphaIndex])
             alphaIndex = checked;
-            
-            temp = names[alphaIndex];
-            names[alphaIndex] = names[i];
-            names[i] = temp;
         }
+        temp = names[alphaIndex];
+        names[alphaIndex] = names[i];
+        names[i] = temp;
+    
     }
     
 }
