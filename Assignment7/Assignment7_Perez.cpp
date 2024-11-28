@@ -48,12 +48,12 @@ int main(){
 void sortNames(string names[], int size){
     int i, alphaIndex, checked;
     string temp;
-    for(i=0;i<(size-1);i++){
-        alphaIndex = i;
+    for(i=0;i<(size-1);i++){    //This sorting method was taken from the book. There's probably
+        alphaIndex = i;         //a faster method, but I don't know how to do it.
         for(checked=(i+1);checked<size;checked++){
             if(names[checked]<names[alphaIndex])
-            alphaIndex = checked;
-        }
+            alphaIndex = checked; //The other issue is that lowercase names will sort differently than
+        }                         //uppercase names.
         temp = names[alphaIndex];
         names[alphaIndex] = names[i];
         names[i] = temp;
@@ -64,8 +64,8 @@ void sortNames(string names[], int size){
 
 bool searchName(const string names[], int size, const string& target){
     int i;
-    for(i=0;i<size;i++){
-        if(names[i]==target)
+    for(i=0;i<size;i++){                //This function was certainly easier to figure out, and since
+        if(names[i]==target)            //it returns a bool value, the rest could be done in Main.
         return true;
     }
     return false;
@@ -75,8 +75,8 @@ string findLongestName(const string names[], int size){
     int i;
     string longest = names[0];
     string next;
-    for(i=1;i<size;i++){
-        next = names[i];
+    for(i=1;i<size;i++){                    //Because of the constraints of the function's return value,
+        next = names[i];                    //I couldn't really have a "Multiple names" value.
         if(next.size() >= longest.size())
         longest = next;
     }
